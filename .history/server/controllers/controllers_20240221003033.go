@@ -4,13 +4,12 @@ import (
 	"context"
 	"log"
 
-	_ "github.com/sahil/todo/middleware"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func getAllTasks() []primitive.M {
-	cur, err := collection.Find(context.Background(), bson.D{{}})
+	curr, err := collection.Find(context.Background(), bson.D{{}})
 	if err != nil {
 		log.Fatal(err)
 	}
